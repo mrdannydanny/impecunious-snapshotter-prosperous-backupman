@@ -23,6 +23,13 @@ module "snapshot-by-tag" {
   environment = var.environment # tag used to filter snapshots being created
 }
 
+# backup plan
+module "backup-plan" {
+  source = "./modules/backup-plan"
+  environment = var.environment
+  aws_region = var.aws_region
+}
+
 # outputs
 output "instance_id" {
   value = module.dummy-ec2.instance_details
