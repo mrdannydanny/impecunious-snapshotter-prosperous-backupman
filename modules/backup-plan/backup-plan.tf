@@ -114,33 +114,3 @@ resource "aws_backup_selection" "backup-selection" {
     }
   }
 }
-
-
-
-
-/*
-
-## nope
-resource "aws_backup_plan" "example" {
-  name = "tf_example_backup_plan"
-
-  rule {
-    rule_name         = "tf_example_backup_rule"
-    target_vault_name = "test"
-    schedule          = "cron(45 23 * * ? *)"
-
-    lifecycle {
-      delete_after = 14
-      #cold_storage_after = 365
-    }
-  }
-
-  advanced_backup_setting {
-    backup_options = {
-      WindowsVSS = "disabled"
-    }
-    resource_type = "EC2"
-  }
-}
-
-*/
