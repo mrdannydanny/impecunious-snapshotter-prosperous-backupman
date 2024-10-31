@@ -4,6 +4,7 @@ resource "aws_ebs_volume" "example" {
 
   tags = {
     environment = var.environment
+    backupable  = var.environment
   }
 }
 
@@ -13,6 +14,7 @@ resource "aws_ebs_volume" "example_second_vol" {
 
   tags = {
     environment = var.environment
+    backupable  = var.environment
   }
 }
 
