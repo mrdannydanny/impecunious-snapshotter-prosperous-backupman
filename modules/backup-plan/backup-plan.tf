@@ -51,7 +51,7 @@ resource "aws_backup_plan" "main-backup-plan" {
   rule {
     completion_window = 120 # sets a 120 minute window for the backup job to complete. You may want to increase depending on what you are backing up
     rule_name         = "WeeklyBackups"
-    schedule          = "cron(20 21 ? * 1 *)" #"cron(0 5 ? * 1 *)"
+    schedule          = "cron(0 5 ? * 1 *)"
     start_window      = 60 # sets a 60 minute window for the backup job to start.
     target_vault_name = join("-", [var.environment, "backup-vault", var.aws_region])
 
