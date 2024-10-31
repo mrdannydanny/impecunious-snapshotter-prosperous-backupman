@@ -19,15 +19,15 @@ module "volume-to-attach" {
 
 # takes snapshot by tag
 module "snapshot-by-tag" {
-  source = "./modules/snapshot-by-tag"
+  source      = "./modules/snapshot-by-tag"
   environment = var.environment # tag used to filter snapshots being created
 }
 
 # backup plan
 module "backup-plan" {
-  source = "./modules/backup-plan"
+  source      = "./modules/backup-plan"
   environment = var.environment
-  aws_region = var.aws_region
+  aws_region  = var.aws_region
 }
 
 # outputs
